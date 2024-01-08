@@ -88,15 +88,15 @@ export default function PriceSection() {
 					heading={"Meet our pricing plan that suit you"}
 					text={"Deal for your business"}
 				/>
-				<div className="w-full flex mt-20">
-					<ul className="hidden lg:block lg:w-full lg:max-w-xs lg:mt-40 rounded-md">
+				<div className="w-full inline-flex mt-20">
+					<ul className="hidden lg:block lg:w-full lg:basis-[25%] lg:mt-[164px] rounded-md">
 						{facilities.map((fn) => (
-							<li className="py-3 border-b px-5" key={fn.id}>
+							<li className="border-b pl-5 h-[40px] w-full leading-[40px]" key={fn.id}>
 								{fn.name}
 							</li>
 						))}
 					</ul>
-					<div className="w-full grid grid-cols-1 gap-y-14 px-2 lg:grid-cols-4 lg:gap-y-0 lg:gap-x-2">
+					<div className="w-full grid grid-cols-1 gap-y-8 px-2 lg:px-0 lg:grid-cols-4 lg:gap-y-0 lg:gap-x-2">
 						{pricingList.map((plan) => (
 							<PricePlanCard plan={plan} key={plan.id} />
 						))}
