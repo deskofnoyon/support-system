@@ -14,7 +14,7 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 	return (
 		<header className="bg-[#fefbf7] sticky top-0 z-10">
-			<nav className="flex items-center justify-between container py-2 px-2 lg:px-0">
+			<nav className="flex items-center justify-between container py-2 px-2 lg:px-12">
 				<a href="#">
 					<img src={logo} alt="logo-image" />
 				</a>
