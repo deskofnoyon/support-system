@@ -1,8 +1,9 @@
-# React + Vite
+# Support System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Explore 50+ integrations that make your day-to-day workflow more efficient and familiar. Our extensive developer tools might also strike your fancy website.
 
-Currently, two official plugins are available:
+## Live site [URL](https://web-support-system.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Contributors
+
+![Contributors](https://contrib.rocks/image?repo=deskofnoyon/support-system)
