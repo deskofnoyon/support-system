@@ -19,8 +19,8 @@ export default function Navbar() {
 					<img src={logo} alt="logo-image" />
 				</a>
 				<ul
-					className={`flex flex-col absolute left-0 w-full md:px-10 lg:px-0 lg:flex-row lg:static lg:w-auto lg:space-x-1 ${
-						open ? "top-16" : "-top-64"
+					className={`flex flex-col absolute bg-[#fefbf7] left-0 w-full md:px-10 lg:px-0 lg:flex-row lg:static lg:w-auto lg:space-x-1 lg:bg-transparent ${
+						open ? "top-14" : "-top-64"
 					}`}
 				>
 					{menuLinks.map((menu, index) => (
@@ -30,7 +30,7 @@ export default function Navbar() {
 				<button className="hidden lg:btn">Parchase Now</button>
 				<button
 					onClick={() => setOpen(!open)}
-					className="bg-slate-50 p-[7px] rounded border border-primary/60 lg:hidden active:scale-95 duration-200"
+					className="p-[7px] rounded border border-primary/60 lg:hidden active:scale-95 duration-200"
 				>
 					{!open ? <HiMiniBars2 size={28} /> : <HiXMark size={28} />}
 				</button>

@@ -1,12 +1,9 @@
 import check from "../../assets/check.svg";
 import cross from "../../assets/cross.svg";
 
-
-
-
 const PricePlanCard = ({ plan }) => {
 	return (
-		<div className="relative">
+		<div className="relative hover:cursor-pointer">
 			{plan.recommended && (
 				<div className="py-1 px-3 uppercase bg-[#52ACFF] text-white rounded-t-md text-center absolute -top-[28px] left-0 w-full text-sm font-semibold">
 					Recommended
@@ -14,8 +11,9 @@ const PricePlanCard = ({ plan }) => {
 			)}
 
 			<div
-				className={`bg-white text-center space-y-5  border duration-200 hover:shadow-md ${!plan.recommended ? "rounded-md" : "rounded-b-md"
-					}`}
+				className={`bg-white text-center space-y-5  border duration-200 hover:shadow-md ${
+					!plan.recommended ? "rounded-md" : "rounded-b-md"
+				}`}
 			>
 				<div className="py-8 px-3 space-y-4">
 					<h3 className="text-xl font-medium text-gray-400">
@@ -28,22 +26,18 @@ const PricePlanCard = ({ plan }) => {
 				</div>
 				<table className="table-auto  w-full">
 					{Object.keys(plan.packageFacilates).map((fc, index) => {
-
 						let inputString = fc;
-						let convertedString = inputString.replace(/([A-Z])/g, ' $1').trim();
-						convertedString = convertedString.charAt(0).toUpperCase() + convertedString.slice(1);
-
+						let convertedString = inputString.replace(/([A-Z])/g, " $1").trim();
+						convertedString =
+							convertedString.charAt(0).toUpperCase() +
+							convertedString.slice(1);
 
 						return (
 							<tr
 								className="border-b h-[40px] lg:flex lg:items-center"
 								key={index}
 							>
-								<td className="lg:hidden">
-									{
-										convertedString
-									}
-								</td>
+								<td className="lg:hidden">{convertedString}</td>
 
 								<td className="mx-auto">
 									<img
@@ -51,7 +45,8 @@ const PricePlanCard = ({ plan }) => {
 										alt="facilaty-mark"
 									/>
 								</td>
-							</tr>)
+							</tr>
+						);
 					})}
 				</table>
 				<div className="py-10 px-3 space-y-4">
@@ -62,8 +57,7 @@ const PricePlanCard = ({ plan }) => {
 				</div>
 			</div>
 		</div>
-	)
-}
-
+	);
+};
 
 export default PricePlanCard;
