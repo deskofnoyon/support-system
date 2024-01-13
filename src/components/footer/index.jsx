@@ -3,6 +3,67 @@ import twitter from "../../assets/twitter.svg";
 import github from "../../assets/github.svg";
 import dribble from "../../assets/dribble.svg";
 import logo from "../../assets/logo.svg";
+import FooterLink from "./footer-link";
+
+const aboutUs = [
+	{
+		name: "Support Center",
+		url: ""
+	},
+	{
+		name: "Customer Support",
+		url: ""
+	},
+	{
+		name: "About Us",
+		url: ""
+	},
+	{
+		name: "Copyright",
+		url: ""
+	}
+];
+
+const ourInfo = [
+	{ name: "Return Policy", url: "/return-policy" },
+	{ name: "Privacy Policy", url: "/privacy-policy" },
+	{ name: "Terms & Conditions", url: "/terms-and-conditions" },
+	{ name: "Site Map", url: "/site-map" }
+];
+
+const myAccount = [
+	{ name: "Press Inquiries", url: "/press-inquiries" },
+	{ name: "Social Media", url: "/social-media" },
+	{ name: "Directories", url: "/directories" },
+	{ name: "Images & B-roll", url: "/images-and-broll" }
+];
+
+const contact = [
+	{
+		id: 1,
+		name: "Facebook",
+		url: "https://facebook.com",
+		icon: facebook
+	},
+	{
+		id: 2,
+		name: "Twitter",
+		url: "https://twitter.com",
+		icon: twitter
+	},
+	{
+		id: 3,
+		name: "GitHub",
+		url: "https://github.com",
+		icon: github
+	},
+	{
+		id: 4,
+		name: "Gribble",
+		url: "https://dribbile.com",
+		icon: dribble
+	},
+];
 
 export default function Footer() {
 	return (
@@ -18,114 +79,55 @@ export default function Footer() {
 							<span>|</span>
 							<a href="#">Privacy</a>
 						</div>
-						<p>Copyright by {new Date().getFullYear()} Redq, Inc</p>
+						<p className="text-sm">Copyright by {new Date().getFullYear()} Redq, Inc</p>
 					</div>
 
 					<div className="space-y-4">
 						<h3 className="text-xl font-semibold">About US</h3>
 						<ul className="space-y-2">
-							<li>
-								<a className="hover:underline" href="#">
-									Support Center
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Customer Support
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									About Us
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Copyright
-								</a>
-							</li>
+							{
+								aboutUs.map((link, index) =>
+									<FooterLink link={link} key={index} />
+								)
+							}
 						</ul>
 					</div>
 
 					<div className="space-y-4">
 						<h3 className="text-xl font-semibold">Our Information</h3>
 						<ul className="space-y-2">
-							<li>
-								<a className="hover:underline" href="#">
-									Return Policy
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Privacy Policy
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Terms & Conditions
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Site Map
-								</a>
-							</li>
+							{
+								ourInfo.map((link, index) =>
+									<FooterLink link={link} key={index} />
+								)
+							}
 						</ul>
 					</div>
 
 					<div className="space-y-4">
 						<h3 className="text-xl font-semibold">My Account</h3>
 						<ul className="space-y-2">
-							<li>
-								<a className="hover:underline" href="#">
-									Press inquiries
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Social media
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Directories
-								</a>
-							</li>
-							<li>
-								<a className="hover:underline" href="#">
-									Images & B-roll
-								</a>
-							</li>
+							{
+								myAccount.map((link, index) =>
+									<FooterLink link={link} key={index} />
+								)
+							}
 						</ul>
 					</div>
 
 					<div className="space-y-4">
 						<h3 className="text-xl font-semibold">Connect</h3>
 						<ul className="space-y-2">
-							<li>
-								<a className="inline-flex space-x-3 hover:underline" href="#">
-									<img src={facebook} alt="facebook" />
-									<span>Facebook</span>
-								</a>
-							</li>
-							<li>
-								<a className="inline-flex space-x-3 hover:underline" href="#">
-									<img src={twitter} alt="twitter" />
-									<span>Twitter</span>
-								</a>
-							</li>
-							<li>
-								<a className="inline-flex space-x-3 hover:underline" href="#">
-									<img src={github} alt="github" />
-									<span>GitHub</span>
-								</a>
-							</li>
-							<li>
-								<a className="inline-flex space-x-3 hover:underline" href="#">
-									<img src={dribble} alt="dribble" />
-									<span>Dribble</span>
-								</a>
-							</li>
+							{
+								contact.map((socialLink, index) =>
+									<li key={index}>
+										<a className="inline-flex space-x-3 hover:underline" href={socialLink.url}>
+											<img src={socialLink.icon} alt={socialLink.name} />
+											<span>{socialLink.name}</span>
+										</a>
+									</li>
+								)
+							}
 						</ul>
 					</div>
 				</div>
